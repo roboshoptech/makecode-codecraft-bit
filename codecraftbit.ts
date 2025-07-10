@@ -9,22 +9,26 @@ namespace codecraftbit {
     console.log("hello world");
   }
 
+  //% block
   //% subcategory=Sensors
   //% blockId=codecraftbit-sensor-read
   export function readSensor(): number {
     return 42;
   }
 
+  //% block
   //% subcategory=Actuators
   //% group="Servo"
   //% blockId=codecraftbit-actuator-servo-set
   export function setServo(pos: number) {}
 
+  //% block
   //% subcategory=Actuators
   //% group="DC Motor"
   //% blockId=codecraftbit-actuator-dcmotor-spin
   export function spinMotor(pos: number) {}
 
+  //% block
   //% subcategory=Actuators
   //% group="DC Motor"
   //% blockId=codecraftbit-actuator-dcmotor-stop
