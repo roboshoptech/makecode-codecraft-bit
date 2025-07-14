@@ -1,10 +1,10 @@
 enum Motors {
   //% block="motor M1"
-  Left = 0,
+  CCB_M1 = 0,
   //% block="motor M2"
-  Right = 1,
+  CCB_M2 = 1,
   //% block="both motors"
-  Both = 2,
+  CCB_Both = 2,
 }
 
 enum Servos {
@@ -48,18 +48,18 @@ namespace codecraftbit {
     }
     const analogSpeed = (Math.abs(speed) * 1024) / 100;
     const dir = Math.sign(speed);
-    if (motor == Motors.Both) {
-      doSpinMotor(Motors.Left, dir, analogSpeed);
-      doSpinMotor(Motors.Right, dir, analogSpeed);
+    if (motor == Motors.CCB_Both) {
+      doSpinMotor(Motors.CCB_M1, dir, analogSpeed);
+      doSpinMotor(Motors.CCB_M2, dir, analogSpeed);
     } else {
       doSpinMotor(motor, dir, analogSpeed);
     }
   }
 
   const MOTOR_PINS = [
-    [DigitalPin.P4, DigitalPin.P5, DigitalPin.P6] as const,
-    [DigitalPin.P10, DigitalPin.P11, DigitalPin.P12] as const,
-  ] as const;
+    [DigitalPin.P4, DigitalPin.P5, DigitalPin.P6],
+    [DigitalPin.P10, DigitalPin.P11, DigitalPin.P12],
+  ];
 
   function doSpinMotor(motor: number, dir: number, speed: number) {
     const [p1, p2, p3] = MOTOR_PINS[motor];
