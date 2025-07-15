@@ -44,7 +44,7 @@ namespace codecraftbit {
   //% speed.min=-100 speed.max=100
   export function spinMotor(motor: Motors, speed: number) {
     if (speed == 0) {
-      this.stopMotor(motor);
+      stopMotor(motor);
     }
     const analogSpeed = (Math.abs(speed) * 1024) / 100;
     const dir = Math.sign(speed);
