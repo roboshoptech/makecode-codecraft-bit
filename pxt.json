@@ -1,14 +1,25 @@
 {
-  "name": "codecraftbit",
-  "version": "1.0.0",
-  "description": "Codecraft:bit MakeCode extension",
-  "license": "MIT",
-  "dependencies": {
-    "core": "*"
-  },
-  "files": ["README.md", "codecraftbit.ts"],
-  "testFiles": ["test.ts"],
-  "public": true,
-  "supportedTargets": ["microbit"],
-  "preferredEditor": "tsprj"
+    "name": "codecraftbit",
+    "version": "1.0.0",
+    "description": "Codecraft:bit MakeCode extension",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "codecraftbit.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true,
+    "targetVersions": {
+        "target": "8.0.8",
+        "targetId": "microbit"
+    },
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj"
 }
