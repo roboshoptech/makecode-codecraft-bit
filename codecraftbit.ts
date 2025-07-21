@@ -1,4 +1,4 @@
-enum Motors {
+enum CCBIT_Motors {
   //% block="motor M1"
   CCB_M1 = 0,
   //% block="motor M2"
@@ -7,7 +7,7 @@ enum Motors {
   CCB_Both = 2,
 }
 
-enum Servos {
+enum CCBIT_Servos {
   //% block="servo P0"
   PeaZero = 0,
   //% block="servo P1"
@@ -34,7 +34,7 @@ namespace codecraftbit {
   //% block="set %servo to %position degrees"
   //% group="Servo"
   //% position.min=0 position.max=180
-  export function setServo(servo: Servos, position: number) {
+  export function setServo(servo: CCBIT_Servos, position: number) {
     pins.servoWritePin(SERVO_PINS[servo], position);
   }
 
@@ -42,15 +42,15 @@ namespace codecraftbit {
   //% block="run %motor at %speed"
   //% group="DC Motor"
   //% speed.min=-100 speed.max=100
-  export function spinMotor(motor: Motors, speed: number) {
+  export function spinMotor(motor: CCBIT_Motors, speed: number) {
     if (speed == 0) {
       stopMotor(motor);
     }
     const analogSpeed = (Math.abs(speed) * 1024) / 100;
     const dir = Math.sign(speed);
-    if (motor == Motors.CCB_Both) {
-      doSpinMotor(Motors.CCB_M1, dir, analogSpeed);
-      doSpinMotor(Motors.CCB_M2, dir, analogSpeed);
+    if (motor == CCBIT_Motors.CCB_Both) {
+      doSpinMotor(CCBIT_Motors.CCB_M1, dir, analogSpeed);
+      doSpinMotor(CCBIT_Motors.CCB_M2, dir, analogSpeed);
     } else {
       doSpinMotor(motor, dir, analogSpeed);
     }
@@ -71,7 +71,7 @@ namespace codecraftbit {
   //% subcategory=Actuators
   //% block
   //% group="DC Motor"
-  export function stopMotor(motor: Motors) {
+  export function stopMotor(motor: CCBIT_Motors) {
     const [p1, p2, p3] = MOTOR_PINS[motor];
     pins.digitalWritePin(p1, 0);
     pins.digitalWritePin(p2, 0);
