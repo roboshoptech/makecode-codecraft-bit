@@ -1,6 +1,6 @@
 {
     "name": "codecraftbit",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Codecraft:bit MakeCode extension",
     "license": "MIT",
     "dependencies": {
